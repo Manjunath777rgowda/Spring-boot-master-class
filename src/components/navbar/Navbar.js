@@ -1,16 +1,25 @@
 import React from "react";
-import './Navbar.css';
+import { NavLink } from "react-router-dom";
+import { Menulist } from "./Menulist";
+import "./Navbar.css";
 
 const Navbar = () => {
+
+  const menuList = Menulist.map(({ url, title }, index) => {
+    return (
+      <li key={index}>
+        <NavLink exact to={url} activeClassName="active">
+          {title}
+        </NavLink>
+      </li>
+    );
+  });
+
   return (
     <nav>
-          <div className="logo">Mobile World</div>
-          <ul className="menu-list">
-              <li><a href="/">Home</a></li>
-              <li><a href="/merchant">Merchant</a></li>
-              <li><a href="/customer">Customer</a></li>
-          </ul>
-      </nav>
+      <div className="logo">Mobile<span>World</span></div>
+      <ul className="menu-list">{menuList}</ul>
+    </nav>
   );
 };
 
