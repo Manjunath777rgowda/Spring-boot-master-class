@@ -59,18 +59,19 @@ button {
 }
 
 .server-url {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   background: #6a357b;
   margin-top: 40px;
   font-size: 40px;
   padding: 10px;
-  width: 70%;
+  width: 50%;
 }
 
 p {
   margin: 0px;
   overflow-x: scroll;
 
+}
+
+.alert{
+  background-color: tomato;
 }
