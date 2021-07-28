@@ -6,35 +6,6 @@ import { serverUrlName } from "./commons/GeneralConstants";
 const Home = () => {
   const [serverUrl, setServerUrl] = useState("");
 
-  const serverStatus = async () => {
-    var element = document.getElementById("server-url-p");
-    var savedServerUrl = getServerUrl(serverUrlName);
-
-     if (element) {
-      if (savedServerUrl) {
-        element.innerHTML = "Server Url is : " + savedServerUrl;
-        element.style.background = "#6a357b";
-      } else {
-        element.innerHTML = "Server Url is not configured";
-        element.style.background = "tomato";
-      }
-    }
-
-    var response = await getRequest("/");
-
-    element = document.getElementById("server-status");
-    if (element) {
-      if (response) {
-        element.innerHTML = "Server is UP";
-        element.style.background = "#17690c";
-      } else {
-        element.innerHTML = "Server is Down";
-        element.style.background = "tomato";
-      }
-    }
-  };
-
-  setInterval(serverStatus, 5000);
 
   const save = async (e) => {
     e.preventDefault();

@@ -10,9 +10,9 @@
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .container::after {
@@ -40,13 +40,11 @@
 
 .item-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
-  flex-direction: column;
   position: relative;
   z-index: 2;
   margin-left: 40px;
-  width: 50%;
 }
 
 .field {
@@ -93,26 +91,115 @@ p {
   width: 20%;
   margin: auto;
   z-index: 2;
+  margin-bottom: 50px;
 }
 
-.field{
+.field {
   height: 100px;
   width: 500px;
 }
 
-form{
-width: 100%$;
-}
-
-.field-lable{
+.field-lable {
   margin-bottom: 10px !important;
   color: white !important;
   height: 20%;
   font-size: large !important;
 }
 
-.field input{
+.item-list {
+  width: 30%;
+}
+
+.field input {
   height: 50%;
   color: black !important;
 }
 
+table {
+  border: white 1px solid;
+  width: 80% !important;
+  height: 200px;
+  overflow-y: scroll !important;
+}
+
+tr {
+  border: white 1px solid !important;
+  width: 100%;
+  height: 25px;
+}
+
+tr:nth-child(even) {
+  background: gray;
+}
+
+td,
+th {
+  border-right: solid 1px white;
+  text-align: center;
+  font-size: large;
+  height: 100%;
+}
+
+tbody{
+  overflow: scroll;
+}
+
+.create-item{
+  width: 30%;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
