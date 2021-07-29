@@ -13,6 +13,7 @@ export async function getRequest(url) {
         return result.data;
     }
 }
+
 export async function postRequest(url,requestBody) {
   url = getServerUrl(serverUrlName) + url;
 
@@ -22,6 +23,18 @@ export async function postRequest(url,requestBody) {
     
     if (result) {
         console.log(result.data);
+        return result.data;
+    }
+}
+
+export async function putRequest(url) {
+  url = getServerUrl(serverUrlName) + url;
+
+ var result = await axios
+    .put(url)
+     .catch((e) => console.log("Get Request Failed"));
+    
+    if (result) {
         return result.data;
     }
 }

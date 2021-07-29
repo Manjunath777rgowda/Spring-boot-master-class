@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getRequest } from "../commons/Axios";
 
-const GetAllItems = () => {
+const OrderItems = () => {
   const [itemList, setItemList] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,6 @@ const GetAllItems = () => {
 
   const getTableDetails = (itemList) => {
     return (
-      
       <table cellSpacing="0">
         <thead>
           <tr>
@@ -41,11 +40,11 @@ const GetAllItems = () => {
 
   return (
     <div className="item-list">
-      <h1>Item List</h1>
+      <h1>Place Order</h1>
       <br></br>
-      {(itemList && itemList.length>0 ) ? getTableDetails(itemList) : <div>No data found</div>}
+      {(itemList && itemList.length>0) ? getTableDetails(itemList) : <div>No data found</div>}
     </div>
   );
 };
 
-export default GetAllItems;
+export default OrderItems;
